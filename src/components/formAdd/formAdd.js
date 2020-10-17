@@ -1,5 +1,7 @@
 import React from 'react';
 
+import './formAdd.css';
+
 const FormAdd = ()=>{
 
     return (
