@@ -1,63 +1,7 @@
 import React from 'react';
 import { Component } from 'react';
 
-// import './post__item.scss';
-import styled, {css} from 'styled-components';
-
-
-        
-const ListItem = styled.div`
-        display: flex;
-        justify-content: space-between;
-        font-size: 1.25rem;
-        button {
-            width: 35px;
-            height: 35px;
-            margin: 3px;
-            font-size: 17px;
-            border: none;
-            cursor: pointer;
-            &:focus {
-                box-shadow: none;
-                outline: none;
-            }
-        }
-        .btn-star {
-            color: ${({important})=> important? ` #aeaeae`:`#FFD700`};
-        }
-        .btn-trash {
-            color: red;
-        }
-        .fa-heart {
-            width: 35px;
-            height: 35px;
-            text-align: center;
-            line-height: 35px;
-            font-size: 16px;
-            color: red;
-            transition: all 0.3s ;
-            transform:translateX(30px);
-            opacity: 0;
-
-            ${({like})=> like&& css`
-            transform:translateX(0px);
-            opacity: 1;
-            `}
-            
-            
-        }
-        `;
-const Label = styled.span`
-        display: block;
-        line-height: 35px;
-        cursor: pointer;
-        user-select: none;
-        transition: 0.5s all;
-
-        ${({important})=> important && css`
-            color: #FFD700;
-            `}
-`;
+import './post__item.scss';
 
 
 export default class PostItem extends Component {
@@ -84,10 +28,19 @@ export default class PostItem extends Component {
     render() {
         const {label} = this.props
         const {important, like} = this.state
+        let className = "app-list-item d-flex justify-content-between"
+        
+        if(like) {
+            className += ' like';
+        }
 
+        if(important) {
+            className += ' important';
+        }
+        
         return (
-            <ListItem like={like} important = {important}>
-                <Label important = {important} onClick={()=>this.onLike()}>{label}</Label>
+            <div className={className}>
+                <span className="app-list-item-label" onClick={()=>this.onLike()}>{label}</span>
                 <div className="d-flex justify-content-center align-items-center ">
                     <button type="button" onClick={()=> this.onImportant()} className=" btn btn-star btn-sw">
                         <i className="fa fa-star"></i>
@@ -98,7 +51,7 @@ export default class PostItem extends Component {
 
                     <i className="fa fa-heart "></i>
                 </div>
-            </ListItem>
+            </div>
         )
     }
 }

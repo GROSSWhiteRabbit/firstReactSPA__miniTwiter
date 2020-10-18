@@ -6,18 +6,26 @@ import PostFilter from '../post__filter/post__filter';
 import PostList from '../post__list/post__list';
 import FormAdd from '../formAdd/formAdd';
 
-import './app.css';
+// import './app.css';
+// import style from './app.module.scss'
+import styled from 'styled-components'
+
+const AppBlock = styled.div`
+    margin: 0 auto;
+    max-width: 900px;
+`
 
 
 const App = ()=>{
 
 const data = [
+    
     {label: "I lerning React!!", important: true, id:'wawdadw'},
     {label: "I сan't believe in this", important: false, id:'wadw'},
     {label: "It's true?", important: false, id:'wawdddw'},
 ]
     return (
-        <div className="app">
+        <AppBlock>
             <Header/>
             <div className="search-panel d-flex">
                 <SearchFilter/>
@@ -25,7 +33,7 @@ const data = [
             </div>
             <PostList posts={data}/>
             <FormAdd/>
-        </div>
+        </AppBlock>
 )
 };
 
