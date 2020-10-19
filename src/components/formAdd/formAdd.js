@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 
 // import './formAdd.css';
 import styled from 'styled-components'
@@ -8,17 +8,39 @@ const Input = styled.input`
     flex-grow: 1;
     margin-right: 3px;
 `
+// {onAdd}
+export default class FormAdd extends Component{
 
-const FormAdd = ()=>{
+    state = {
+        text: ''
+    }
+    
+    onValueChange = (e) =>{
+        this.setState({
+            text: e.target.value
+        })
+    }
 
-    return (
-        <form action="#" className="bottom-panel d-flex">
-            <Input type="text" className="form-control" name="textForm" placeholder="О чем вы думаете?"/>
-            <button type='submit' className="btn btn-outline-secondary">Добавить</button>
-        </form>
-    );
+    onSubmit = (e)=>{
+        e.preventDefault();
+        this.props.onAdd(this.state.text)
+        this.setState({
+            text: ''
+        })
+    }
+    render(){
+        return (
+            <form onSubmit={this.onSubmit}    
+                action="#" 
+                className="bottom-panel d-flex">
+                <Input value={this.state.text} onChange={this.onValueChange}   type="text" className="form-control" name="textForm" placeholder="О чем вы думаете?"/>
+                <button  type='submit' className="btn btn-outline-secondary">Добавить</button>
+            </form>
+        );
+    }
+
 
 };
 
 
-export default FormAdd;
+ 

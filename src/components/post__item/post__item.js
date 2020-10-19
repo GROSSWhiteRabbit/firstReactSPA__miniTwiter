@@ -61,38 +61,19 @@ const Label = styled.span`
 
 
 export default class PostItem extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            important: this.props.important,
-            like: false
-        }
-    }
 
-    onLike() {
-        this.setState(({like})=>({
-            like: !like
-        }))
-    }
-
-    onImportant() {
-        this.setState(({important})=>({
-            important: !important
-        }))
-    }
 
     render() {
-        const {label} = this.props
-        const {important, like} = this.state
+        const {label, onDelete,onToggleLike,onToggleImportant, important, like} = this.props
 
         return (
             <ListItem like={like} important = {important}>
-                <Label important = {important} onClick={()=>this.onLike()}>{label}</Label>
+                <Label important = {important} onClick={onToggleLike}>{label}</Label>
                 <div className="d-flex justify-content-center align-items-center ">
-                    <button type="button" onClick={()=> this.onImportant()} className=" btn btn-star btn-sw">
+                    <button type="button" onClick={onToggleImportant} className=" btn btn-star btn-sw">
                         <i className="fa fa-star"></i>
                     </button>
-                    <button type="button" className=" btn btn-trash btn-sw">
+                    <button type="button" onClick={onDelete} className=" btn btn-trash btn-sw">
                         <i className="fa fa-trash"></i>
                     </button>
 

@@ -21,11 +21,11 @@ const H1Head = styled(Head)`
         color: green;
     }
 `
-const Header = ()=>{
+const Header = ({liked,dataLength})=>{
     return (
         <Head > 
             <h1>Kononenko Vladimir</h1>
-            <h2> Записей 5, из них понравилось 1</h2>
+            <h2> Записей {dataLength}, из них понравилось {liked}</h2>
         </Head>
     )
 };

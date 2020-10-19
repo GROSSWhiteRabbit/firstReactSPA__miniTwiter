@@ -15,7 +15,7 @@ const PostListGroupItem = styled.li`
         padding: 20px 35px 20px 35px;
         margin-top: 10px;
 `
-const PostList = ({posts})=>{
+const PostList = ({posts, onDelete,onToggleLike,onToggleImportant})=>{
 
     const    elements = posts.map((obj)=> {
         if(typeof(obj)=='object' && obj!= null) {
@@ -23,7 +23,11 @@ const PostList = ({posts})=>{
 
             return (
                 <PostListGroupItem key={id} className="list-group-item">
-                     <PostItem  {...items}/>
+                     <PostItem 
+                      {...items}
+                      onDelete={()=>onDelete(id)}
+                      onToggleImportant={()=>onToggleImportant(id)}
+                      onToggleLike={()=>onToggleLike(id)}/>
                 </PostListGroupItem>
                
                 )

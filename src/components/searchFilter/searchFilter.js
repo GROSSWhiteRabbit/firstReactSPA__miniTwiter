@@ -10,8 +10,8 @@ const Input = styled.input`
 
 
 
-const SearchFilter = ()=>{
-    return <Input type="text" name="search" className="form-control"  placeholder="Поиск по записям"/>
+const SearchFilter = ({onTerm})=>{
+    return <Input onChange={onTerm} type="text" name="search" className="form-control"  placeholder="Поиск по записям"/>
 };
 
 
