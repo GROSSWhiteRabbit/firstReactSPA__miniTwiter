@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/firstReactSPA__miniTwiter/static/css/main.69cbd2c1.chunk.css",
+    "main.js": "/firstReactSPA__miniTwiter/static/js/main.e8e900b8.chunk.js",
+    "main.js.map": "/firstReactSPA__miniTwiter/static/js/main.e8e900b8.chunk.js.map",
+    "runtime-main.js": "/firstReactSPA__miniTwiter/static/js/runtime-main.98c0e488.js",
+    "runtime-main.js.map": "/firstReactSPA__miniTwiter/static/js/runtime-main.98c0e488.js.map",
+    "static/css/2.2a86faee.chunk.css": "/firstReactSPA__miniTwiter/static/css/2.2a86faee.chunk.css",
+    "static/js/2.c7952e04.chunk.js": "/firstReactSPA__miniTwiter/static/js/2.c7952e04.chunk.js",
+    "static/js/2.c7952e04.chunk.js.map": "/firstReactSPA__miniTwiter/static/js/2.c7952e04.chunk.js.map",
+    "index.html": "/firstReactSPA__miniTwiter/index.html",
+    "precache-manifest.165405625a72bf2429b9b6728a88ff47.js": "/firstReactSPA__miniTwiter/precache-manifest.165405625a72bf2429b9b6728a88ff47.js",
+    "service-worker.js": "/firstReactSPA__miniTwiter/service-worker.js",
+    "static/css/2.2a86faee.chunk.css.map": "/firstReactSPA__miniTwiter/static/css/2.2a86faee.chunk.css.map",
+    "static/css/main.69cbd2c1.chunk.css.map": "/firstReactSPA__miniTwiter/static/css/main.69cbd2c1.chunk.css.map",
+    "static/js/2.c7952e04.chunk.js.LICENSE.txt": "/firstReactSPA__miniTwiter/static/js/2.c7952e04.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.98c0e488.js",
+    "static/css/2.2a86faee.chunk.css",
+    "static/js/2.c7952e04.chunk.js",
+    "static/css/main.69cbd2c1.chunk.css",
+    "static/js/main.e8e900b8.chunk.js"
+  ]
+}
